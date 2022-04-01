@@ -8,7 +8,6 @@ export const articlesReducer = (state = defaultState, action) => {
   switch (action.type) {
     case GET_ARTICLES:
       return { ...state, articles: [...state.articles, action.payload] };
-
     default:
       return state;
   }

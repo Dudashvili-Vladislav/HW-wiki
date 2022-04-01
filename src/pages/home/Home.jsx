@@ -17,6 +17,7 @@ export const Home = () => {
       e.preventDefault();
       console.log("click");
       dispatch(fetchArticles(value));
+      
     }
   };
 

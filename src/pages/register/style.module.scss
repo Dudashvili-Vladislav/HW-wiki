@@ -1,3 +1,121 @@
 .register {
-  background: #181c2d;
+  height: 100vh;
+  background: url("../../images/bg-register.png");
+
+  &__container {
+    max-width: 1500px;
+  }
+  &__wrapper {
+    margin-top: 13em;
+
+    &_title {
+      text-transform: uppercase;
+      margin: 0 auto;
+      color: #ffffff;
+      font-family: "Gotham Pro";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 35px;
+      line-height: 102.2%;
+      width: 234px;
+      height: 31px;
+    }
+    &_subTitle {
+      padding-top: 0.9375em;
+      margin: 0 auto;
+      font-family: "Gotham Pro";
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 150%;
+      width: 486px;
+      height: 21px;
+      text-align: center;
+      color: #ffffff;
+    }
+  }
+  &__form {
+    display: flex;
+    margin-top: 3em;
+    justify-content: center;
+    display: flex;
+    &_input {
+      text-indent: 1em;
+      display: flex;
+      margin-top: 1.2em;
+      width: 420px;
+      height: 60px;
+      opacity: 0.4;
+      border: 1px solid #ffffff;
+      box-sizing: border-box;
+      border-radius: 10px;
+      background: inherit;
+    }
+    &_wrapper_checkbox {
+      margin-top: 1em;
+      display: flex;
+      align-items: center;
+    }
+    // &_checkbox {
+    //   opacity: 0.4;
+    //   border: 1px solid #ffffff;
+    //   box-sizing: border-box;
+    //   border-radius: 10px;
+    //   width: 25px;
+    //   height: 25px;
+    // }
+
+    &_label {
+    }
+
+    &_checkbox {
+      display: none;
+    }
+
+    &_fake {
+      display: inline-block;
+      opacity: 0.4;
+      border: 1px solid #ffffff;
+      box-sizing: border-box;
+      border-radius: 10px;
+      width: 25px;
+      height: 25px;
+      position: relative;
+    }
+
+    &_fake::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 30%;
+      background-color: rgb(6, 194, 228);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: 0.2s;
+    }
+
+    &_checkbox:checked + &_fake::before {
+      opacity: 1;
+    }
+
+    &_text {
+    }
+
+    // &_text {
+    //   margin-left: 0.5625em;
+    //   font-family: "Gotham Pro";
+    //   font-style: normal;
+    //   font-weight: 300;
+    //   font-size: 14px;
+    //   line-height: 150%;
+    //   text-align: center;
+    //   width: 386px;
+    //   height: 21px;
+    //   color: #ffffff;
+    // }
+  }
 }

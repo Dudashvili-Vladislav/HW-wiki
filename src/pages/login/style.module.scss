@@ -1,0 +1,141 @@
+.register {
+    height: 100vh;
+    background: url("../../images/wrapper.png");
+  
+    &__container {
+      max-width: 1500px;
+    }
+    &__wrapper {
+      margin-top: 13em;
+  
+      &_title {
+        text-transform: uppercase;
+        text-align: center;
+        color: #ffffff;
+        font-family: "Gotham Pro";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 35px;
+        line-height: 102.2%;
+  
+        height: 31px;
+      }
+      &_subTitle {
+        padding-top: 0.9375em;
+        margin: 0 auto;
+        font-family: "Gotham Pro";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 150%;
+        width: 486px;
+        height: 21px;
+        text-align: center;
+        color: #ffffff;
+      }
+    }
+    &__form {
+      
+      display: flex;
+      margin-top: 3em;
+      justify-content: center;
+      display: flex;
+      &_input {
+        color: #FFFFFF;
+        text-indent: 1em;
+        display: flex;
+        margin-top: 1.2em;
+        width: 420px;
+        height: 60px;
+        opacity: 0.4;
+        border: 1px solid #ffffff;
+        box-sizing: border-box;
+        border-radius: 10px;
+        background: inherit;
+      }
+      &_wrapper_checkbox {
+        margin-top: 1em;
+        display: flex;
+        align-items: center;
+      }
+  
+  
+      &_label {
+        display: flex;
+        align-items: center;
+      }
+  
+      &_checkbox {
+        display: none;
+      }
+  
+      &_fake {
+        display: inline-block;
+        opacity: 0.4;
+        border: 1px solid #ffffff;
+        box-sizing: border-box;
+        border-radius: 10px;
+        width: 25px;
+        height: 25px;
+        position: relative;
+      }
+  
+      &_fake::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-radius: 30%;
+        background-color: rgb(6, 194, 228);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: 0.2s;
+      }
+  
+      &_checkbox:checked + &_fake::before {
+        opacity: 1;
+      }
+  
+    
+  
+      &_text {
+        margin-left: 0.5625em;
+        font-family: "Gotham Pro";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 150%;
+        text-align: center;
+        width: 386px;
+        height: 21px;
+        color: #ffffff;
+      }
+      &_btn{
+        display: block;
+        margin: 0 auto;
+        margin-top: 1.8125em;
+        cursor: pointer;
+        width: 240px;
+        height: 65px;
+        background: radial-gradient(66.58% 146.41% at -2.19% 16.98%, #14BDFF 0%, rgba(3, 57, 89, 0) 74.36%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, radial-gradient(80.2% 129.9% at 96.3% 0%, #C51BFF 0%, rgba(3, 57, 89, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, radial-gradient(72.79% 65.22% at 80.51% 92.28%, rgba(68, 220, 255, 0.71) 0%, rgba(120, 199, 217, 0) 84.87%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, #3042FF;
+        border: 1px solid rgba(255, 255, 255, 0.21);
+        box-sizing: border-box;
+        box-shadow: inset 0px 4px 13px rgba(255, 255, 255, 0.25);
+        border-radius: 10px;
+        text-transform: uppercase;
+        font-family: 'Gotham Pro';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 102.2%;
+        /* or 16px */
+        text-align: center;
+        letter-spacing: 0.05em;
+        color: #FFFFFF;
+      }
+    }
+  }
+  

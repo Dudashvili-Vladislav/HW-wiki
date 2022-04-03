@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import classes from "./style.module.scss";
+import {FetchCreateUsers} from "../../redux/asyncActions/users"
+import { useNavigate } from "react-router-dom";
+
 export const Register = () => {
+const dispatch = useDispatch()
+const navigate = useNavigate()
+
   const [form, setForm] = useState({
     name: "",
     comment: "",
@@ -9,16 +16,23 @@ export const Register = () => {
     isAgree: false,
   });
 
-  useEffect(() => {}, [setForm]);
 
-  const onChange = (e) => {
-    console.log(e.target.name);
-    setForm({ ...form, [e.target.name]: e.target.value });
+
+  const onChange = ({target}) => {
+  
+    console.log(target.value);
+    console.log(target.name);
+    setForm({ ...form, [target.name]: target.type === 'checkbox' ? target.checked : target.value })
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
+    dispatch(FetchCreateUsers(form))
+    setForm({name:'',comment:'',login:'',password:'',isAgree:false})
+    navigate("/login")
   };
+  console.log(form);
+
 
   return (
     <div className={classes.register}>
@@ -63,7 +77,7 @@ export const Register = () => {
               <label className={classes.register__form_label}>
                 <input
                   className={classes.register__form_checkbox}
-                  value={form.isAgree}
+                  checked={form.isAgree}
                   onChange={onChange}
                   name="isAgree"
                   type="checkbox"
@@ -73,10 +87,6 @@ export const Register = () => {
                   Я принимаю условия пользовательского соглашения
                 </span>
               </label>
-
-              {/* <div className={classes.register__form_text}>
-                Я принимаю условия пользовательского соглашения
-              </div> */}
             </div>
 
             <button

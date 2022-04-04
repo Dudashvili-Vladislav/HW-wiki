@@ -1,5 +1,13 @@
-.menu{
+.menu {
   color: white;
   background: url("../../images/wrapper.png");
   height: 100vh;
+  &__header {
+    max-width: 100%;
+    display: flex;
+    justify-content: end;
+  }
+  &__link {
+    color: wheat;
+  }
 }

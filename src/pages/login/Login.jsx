@@ -16,6 +16,7 @@ const navigate = useNavigate()
 
 
   const onChange = ({target}) => {
+    console.log("first")
   
     console.log(target.value);
     console.log(target.name);

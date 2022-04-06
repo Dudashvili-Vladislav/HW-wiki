@@ -39,10 +39,18 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #000000;
+  background: url("./images/wrapper.png");
   font-family: "Gotham Pro", "sans-serif";
+  background-color: black;
+  background-size: cover;
   box-sizing: border-box;
 }
-*{
+* {
   box-sizing: border-box;
+}
+
+
+.container{
+  max-width: 1280px;
+  margin: 0 auto;
 }

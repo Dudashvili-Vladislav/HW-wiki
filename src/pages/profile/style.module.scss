@@ -1,5 +1,37 @@
-.profile{
-    color: white;
-    background: url("../../images/wrapper.png");
-    height: 100vh;
+.profile {
+  color: #ffffff;
+  &__wrap {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-gap: 20px;
+    margin-top: 30px;
+  }
+  &__title {
+    margin-top: 100px;
+  }
+  &__menu {
+    height: calc(100vh - 200px);
+    background-color: #1d1f27;
+    padding: 10px;
+    position: sticky;
+    top: 20px;
+
+    border-radius: 20px;
+    &_item {
+      color: rgba(255, 255, 255, 0.8);
+      margin-top: 20px;
+      font-size: 1.1em;
+      cursor: pointer;
+      margin-left: 20px;
+
+      & a {
+        color: #ffffff;
+        text-decoration: none;
+        transition: all 0.3s;
+        &:hover {
+          color: #a13ce9;
+        }
+      }
+    }
+  }
 }

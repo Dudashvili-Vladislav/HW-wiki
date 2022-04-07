@@ -9,7 +9,6 @@ import {
 export const getStations = () => {
   return async function (dispatch) {
     const fetchedStations = await stations.getStations();
-
     dispatch(setStationsAction(fetchedStations.data));
   };
 };

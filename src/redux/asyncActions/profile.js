@@ -7,8 +7,13 @@ export const getUser = () => async (dispatch) => {
 };
 
 export const updateUser = (user) => async (dispatch) => {
-  const profile = await User.updateUser(user);
-  dispatch(setUserAction(profile.data));
+  try {
+    const profile = await User.updateUser(user);
+    dispatch(setUserAction(profile.data));
+    alert("user succes update");
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const deleteUser = (id) => async (dispatch) => {

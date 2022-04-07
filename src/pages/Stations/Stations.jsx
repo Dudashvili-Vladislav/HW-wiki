@@ -35,20 +35,20 @@ export const Stations = () => {
   const onEdit = (id) => {
     onOpenEdit();
     setCurrentStation(stations.filter((station) => station.id === id)[0]);
-   
   };
 
   return (
     <div className={classes.stations}>
-      {stations.length > 0 ? 
-        stations.map((station) => (
-          <Station
-            {...station}
-            key={station.id}
-            onDelete={onDelete}
-            onEdit={onEdit}
-          />
-        )): "stations not found"}
+      {stations.length > 0
+        ? stations.map((station) => (
+            <Station
+              {...station}
+              key={station.id}
+              onDelete={onDelete}
+              onEdit={onEdit}
+            />
+          ))
+        : "stations not found"}
       {isOpenModal && (
         <Modal width={500} height={500} onClose={onClose}>
           <CreateStation onClose={onClose} />
@@ -56,7 +56,7 @@ export const Stations = () => {
       )}
       {isOpenEditModal && (
         <Modal width={500} height={500} onClose={onCloseEdit}>
-          <EditStation station={currentStation} onClose={onCloseEdit}/>
+          <EditStation station={currentStation} onClose={onCloseEdit} />
         </Modal>
       )}
       <div className={classes.button__wrap}>

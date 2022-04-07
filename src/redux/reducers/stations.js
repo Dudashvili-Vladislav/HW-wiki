@@ -12,7 +12,7 @@ export const stationsReducer = (state = defaultState, action) => {
     case GET_STATIONS:
       return { ...state, stations: action.payload };
     case CREATE_STATION:
-      return { ...state, stations: [...state.stations, action.payload] };
+      return { ...state, stations: [...state.stations, action.payload]};
     case DELETE_STATION:
       return {
         ...state,

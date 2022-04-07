@@ -9,7 +9,7 @@ class StationstApi {
     }
   }
 
-  async createStations(name, comment) {
+  async createStation(name, comment) {
     try {
       return await $api.post("/stations", {
         name,

@@ -1,18 +1,18 @@
 import stations from "../../api/service/stations";
-import { setStationsAction, deleteStation } from "../reducers/stations";
+import { getStationsAction, deleteStationAction, createStationAction } from "../reducers/stations";
 
 export const getStations = () => {
   return async function (dispatch) {
     const fetchedStations = await stations.getStations();
-
-    dispatch(setStationsAction(fetchedStations.data));
+    dispatch(getStationsAction(fetchedStations.data));
   };
 };
 
-export const FetchCreateStations = (name, comment) => {
+export const сreateStation = (name, comment) => {
   return async function (dispatch) {
-    const createStations = await stations.createStations(name, comment);
-    console.log("createStations", createStations);
+    const createStation = await stations.createStation(name, comment);
+    dispatch(createStationAction(createStation))
+    console.log("createStation", createStation);
   };
 };
 
@@ -26,7 +26,7 @@ export const FetchGetStationsById = (id) => {
 export const deleteStationById = (id) => {
   return async function (dispatch) {
     const deletedStation = await stations.deleteStationById(id);
-    dispatch(deleteStation(deletedStation));
+    dispatch(deleteStationAction(deletedStation));
   };
 };
 

@@ -11,7 +11,7 @@ export const stationsReducer = (state = defaultState, action) => {
     case GET_STATIONS:
       return { ...state, stations: action.payload };
     case CREATE_STATION:
-      return { ...state, stations: [...state.stations, action.payload] };
+      return { ...state, stations: [...state.stations, action.payload]};
     case DELETE_STATION:
       return {
         ...state,
@@ -22,5 +22,6 @@ export const stationsReducer = (state = defaultState, action) => {
   }
 };
 
-export const setStationsAction = (payload) => ({ type: GET_STATIONS, payload });
-export const deleteStation = (payload) => ({ type: DELETE_STATION, payload });
+export const getStationsAction = (payload) => ({ type: GET_STATIONS, payload });
+export const deleteStationAction = (payload) => ({ type: DELETE_STATION, payload });
+export const createStationAction = (payload) => ({ type: CREATE_STATION, payload });

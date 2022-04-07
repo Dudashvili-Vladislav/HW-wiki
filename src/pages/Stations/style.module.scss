@@ -2,5 +2,24 @@
   background: #1d1f27;
   padding: 20px;
   border-radius: 20px;
-  
+  vertical-align: bottom;
+  &__button {
+    padding: 20px 60px;
+
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 22px;
+    background-color: rgb(4, 107, 4);
+    margin-top: 40px;
+    transition: all 0.3s;
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(4, 107, 4, 0.8);
+    }
+  }
+}
+
+.button__wrap {
+  text-align: end;
 }

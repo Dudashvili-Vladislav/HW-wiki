@@ -1,4 +1,4 @@
-.station {
+.user {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -13,13 +13,6 @@
 
     &_item {
       margin: 0px 12.5px;
-    }
-  }
-  &__title {
-    transition: all 0.3s;
-    &:hover {
-      color: violet;
-      cursor: pointer;
     }
   }
   &__buttons {

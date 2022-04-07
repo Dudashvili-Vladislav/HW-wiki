@@ -1,0 +1,50 @@
+.card {
+  background-color: #1d1f27;
+  border-radius: 20px;
+  padding: 20px;
+
+  &:last-child {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    text-align: end;
+  }
+  &__title {
+    font-size: 22px;
+    color: #ffffff;
+    text-align: start;
+  }
+  &__item {
+    margin: 20px 10px 0px;
+    &_input {
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 18px;
+      background: inherit;
+      color: white;
+    }
+  }
+  .form__inputs {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  &__button {
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 20px 70px;
+    font-size: 22px;
+    color: white;
+    margin-left: 10px;
+    border: none;
+
+    background-color: #a82fc6;
+    transition: all 0.3s;
+    margin-top: 70px;
+    &:hover {
+      background-color: rgba(#a82fc6, 0.7);
+    }
+  }
+}

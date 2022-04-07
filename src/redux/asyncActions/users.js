@@ -1,53 +1,58 @@
-import users from "../../api/service/users"
+import Users from "../../api/service/users";
+import { setAllUsersAction } from "../reducers/users";
 
-
-export const FetchCreateUsers = ({name,comment,login,password}) => {
+export const FetchCreateUsers = ({ name, comment, login, password }) => {
   return async function (dispatch) {
-    const createUsers = await users.createUsers(name,comment,login,password);
+    const createUsers = await Users.createUsers(name, comment, login, password);
     console.log("createUsers", createUsers);
   };
 };
 
-export const FetchAuthUsers = ({login,password}) => {
+export const FetchAuthUsers = ({ login, password }) => {
   return async function (dispatch) {
-    const authUsers = await users.authUser(login,password);
-    const token = authUsers.data.user_jwt
-    localStorage.setItem("token",token)
+    const authUsers = await Users.authUser(login, password);
+    const token = authUsers.data.user_jwt;
+    localStorage.setItem("token", token);
   };
 };
 
-export const FetchGetAllUsers = () => {
+export const getUsers = () => {
   return async function (dispatch) {
-    const getAllUsers = await users.getAllUsers();
-    console.log("getAllUsers",getAllUsers)
+    const users = await Users.getAllUsers();
+    dispatch(setAllUsersAction(users.data));
   };
 };
 
 export const FetchGetMe = () => {
-  return async function(dispatch) {
-    const getMe = await users.getMe()
-    console.log('getMe',getMe)
-  }
-}
+  return async function (dispatch) {
+    const getMe = await Users.getMe();
+    console.log("getMe", getMe);
+  };
+};
 
 export const FetchGetUserById = (id) => {
-  return async function(dispatch) {
-    const getUserById = await users.getUserById(id)
-    console.log("getUserById",getUserById)
-  }
-}
+  return async function (dispatch) {
+    const getUserById = await Users.getUserById(id);
+    console.log("getUserById", getUserById);
+  };
+};
 
 export const FetchDeleteUser = (id) => {
-  return async function(dispatch) {
-    const deleteUser = await users.deleteUser(id)
-    console.log("deleteUser",deleteUser)
-  }
-}
+  return async function (dispatch) {
+    const deleteUser = await Users.deleteUser(id);
+    console.log("deleteUser", deleteUser);
+  };
+};
 
-export const FetchUpdateUser = (id,name,comment,login,password) => {
-  return async function(dispatch) {
-    const updateUser = await users.updateUser(id,name,comment,login,password)
-    console.log("updateUser",updateUser)
-  }
-}
-
+export const FetchUpdateUser = (id, name, comment, login, password) => {
+  return async function (dispatch) {
+    const updateUser = await Users.updateUser(
+      id,
+      name,
+      comment,
+      login,
+      password
+    );
+    console.log("updateUser", updateUser);
+  };
+};

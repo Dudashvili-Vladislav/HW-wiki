@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import React, { useState, useEffect, useCallback } from "react";
+
 import classes from "./style.module.scss";
-import {FetchCreateUsers} from "../../redux/asyncActions/users"
+
 import { useNavigate } from "react-router-dom";
+import users from "../../api/service/users";
 
 export const Register = () => {
-const dispatch = useDispatch()
-const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [form, setForm] = useState({
     name: "",
@@ -16,23 +16,24 @@ const navigate = useNavigate()
     isAgree: false,
   });
 
+  const registerUser = async () => {
+    await users.createUsers(form);
+  };
 
-
-  const onChange = ({target}) => {
-  
-    console.log(target.value);
-    console.log(target.name);
-    setForm({ ...form, [target.name]: target.type === 'checkbox' ? target.checked : target.value })
+  const onChange = ({ target }) => {
+    setForm({
+      ...form,
+      [target.name]: target.type === "checkbox" ? target.checked : target.value,
+    });
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
-    dispatch(FetchCreateUsers(form))
-    setForm({name:'',comment:'',login:'',password:'',isAgree:false})
-    navigate("/login")
+    registerUser();
+    setForm({ name: "", comment: "", login: "", password: "", isAgree: false });
+    navigate("/login");
   };
-  console.log(form);
-
+  
 
   return (
     <div className={classes.register}>

@@ -1,20 +1,18 @@
 const defaultState = {
-  isAuth:false
+  users: [],
 };
 
-const GET_USER = "GET_USER";
-const SET_AUTH = "SET_AUTH"
+const GET_USERS = "GET_USERS";
 
 export const userReducer = (state = defaultState, action) => {
   switch (action.type) {
-    case GET_USER:
-      return { ...state, articles: [...state.articles, action.payload] };
-      case SET_AUTH:
-        return {...state, isAuth: action.payload}
+    case GET_USERS:
+      return { ...state, users: action.payload };
     default:
       return state;
   }
 };
 
 // export const addArticlesAction = (payload) => ({ type: GET_ARTICLES, payload });
-export const setAuthAction = (payload) => ({ type: SET_AUTH, payload });
+
+export const setAllUsersAction = (payload) => ({ type: GET_USERS, payload });

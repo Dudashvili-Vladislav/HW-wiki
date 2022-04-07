@@ -9,12 +9,9 @@ class StationstApi {
     }
   }
 
-  async createStations(name, comment) {
+  async createStations(station) {
     try {
-      return await $api.post("/stations", {
-        name,
-        comment,
-      });
+      return await $api.post("/stations", station);
     } catch (e) {
       throw new Error(e);
     }
@@ -36,12 +33,9 @@ class StationstApi {
     }
   }
 
-  async updateStationsById(id, name, comment) {
+  async updateStation({ name, comment, id }) {
     try {
-      return await $api.put(`/stations/${id}`, {
-        name,
-        comment,
-      });
+      return await $api.patch(`/stations/${id}`, { name, comment });
     } catch (e) {
       throw new Error(e);
     }

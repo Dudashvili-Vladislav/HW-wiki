@@ -1,36 +1,32 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
+import users from "../../api/service/users";
+import { setAuthAction } from "../../redux/reducers/profile";
 import classes from "./style.module.scss";
-import {FetchAuthUsers} from "../../redux/asyncActions/users"
-import { useNavigate } from "react-router-dom";
-
 
 export const Login = () => {
-const dispatch = useDispatch()
-const navigate = useNavigate()
+  const dispatch = useDispatch();
 
   const [form, setForm] = useState({
     login: "",
     password: "",
   });
 
+  const onChange = ({ target }) => {
+    setForm({ ...form, [target.name]: target.value });
+  };
 
-  const onChange = ({target}) => {
-    console.log("first")
-  
-    console.log(target.value);
-    console.log(target.name);
-    setForm({ ...form, [target.name]: target.value })
+  const login = async () => {
+    const token = await users.authUser(form);
+    localStorage.setItem("token", token.data.user_jwt);
+    dispatch(setAuthAction(true));
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
-    dispatch(FetchAuthUsers(form))
-    setForm({login:'',password:''})
-
+    login();
+    setForm({ login: "", password: "" });
   };
-  console.log(form);
-
 
   return (
     <div className={classes.register}>
@@ -38,7 +34,7 @@ const navigate = useNavigate()
         <div className={classes.register__wrapper}>
           <div className={classes.register__wrapper_title}>авторизация</div>
           <div className={classes.register__wrapper_subTitle}>
-          Авторизуйтесь с помощью вашей почты:
+            Авторизуйтесь с помощью вашей почты:
           </div>
         </div>
         <div className={classes.register__form}>
@@ -58,11 +54,7 @@ const navigate = useNavigate()
               placeholder="Введите пароль"
             />
 
-            <button
-              className={classes.register__form_btn}
-              
-              type="submit"
-            >
+            <button className={classes.register__form_btn} type="submit">
               авторизация
             </button>
           </form>

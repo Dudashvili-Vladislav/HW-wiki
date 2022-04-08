@@ -1,7 +1,7 @@
 {
   "name": "wiki",
   "version": "0.1.0",
-  "homepage": "https://dudashvili-vladislav.github.io/",
+  "homepage": "https://dudashvili-vladislav.github.io/stations/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.8.2",

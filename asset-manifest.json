@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/stations/static/css/main.c035912e.css",
+    "main.js": "/stations/static/js/main.8d20c289.js",
+    "static/media/wrapper.png": "/stations/static/media/wrapper.bea1839b9a0d722aa677.png",
+    "static/media/GothamPro-Light.eot": "/stations/static/media/GothamPro-Light.67dcc6c3498622fd4642.eot",
+    "static/media/GothamPro-Bold.eot": "/stations/static/media/GothamPro-Bold.2eca11eb8ebc1d254a45.eot",
+    "static/media/GothamPro-Bold.ttf": "/stations/static/media/GothamPro-Bold.764ba13de4409a990823.ttf",
+    "static/media/GothamPro-Light.ttf": "/stations/static/media/GothamPro-Light.dfbba8c980f43420d2d1.ttf",
+    "static/media/GothamPro-Medium.eot": "/stations/static/media/GothamPro-Medium.38b9efdc31bc5e2f8f93.eot",
+    "static/media/GothamPro-Medium.ttf": "/stations/static/media/GothamPro-Medium.dca4b95d345c2abd8661.ttf",
+    "static/media/GothamPro-Medium.woff": "/stations/static/media/GothamPro-Medium.48d4d0401d4bd02b35a6.woff",
+    "static/media/GothamPro-Bold.woff": "/stations/static/media/GothamPro-Bold.2c6f2ca60db58ce41cc7.woff",
+    "static/media/GothamPro-Light.woff": "/stations/static/media/GothamPro-Light.f44be092713bc803c628.woff",
+    "static/media/remove.svg": "/stations/static/media/remove.5a15f2236c7054baf9adc4c73e287a08.svg",
+    "static/media/pen.svg": "/stations/static/media/pen.2fd22adbdf248ff7753bee4060d08073.svg",
+    "index.html": "/stations/index.html",
+    "static/media/cross.svg": "/stations/static/media/cross.4fe7e5695c6b806c9ad771c8aac7f9e8.svg",
+    "main.c035912e.css.map": "/stations/static/css/main.c035912e.css.map",
+    "main.8d20c289.js.map": "/stations/static/js/main.8d20c289.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c035912e.css",
+    "static/js/main.8d20c289.js"
+  ]
+}
